@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Kontakt - Min Bedrift{% endblock %}
+
+{% block content %}
+<section class="contact">
+    <h2>Kontakt oss</h2>
+    
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h3>Kontaktinformasjon</h3>
+            <p>
+                <strong>Adresse:</strong><br>
+                Min Bedrift AS<br>
+                Storgaten 123<br>
+                2000 Lillehammer<br>
+                Norge
+            </p>
+            <p>
+                <strong>Telefon:</strong><br>
+                +47 123 45 678
+            </p>
+            <p>
+                <strong>E-post:</strong><br>
+                <a href="mailto:info@minbedrift.no">info@minbedrift.no</a>
+            </p>
+            <p>
+                <strong>Åpningstider:</strong><br>
+                Mandag - Fredag: 08:00 - 17:00<br>
+                Lørdag - Søndag: Lukket
+            </p>
+        </div>
+        
+        <div class="contact-form">
+            <h3>Send oss en melding</h3>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Navn:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-post:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Melding:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Takk for meldingen! Vi kontakter deg snart.');
+    this.reset();
+});
+</script>
+{% endblock %}

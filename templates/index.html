@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Hjemme - Min Bedrift{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h2>Velkommen til Min Bedrift</h2>
+    <p>Vi tilbyr de beste løsninger for dine behov</p>
+    {% if not session.get('user_id') %}
+    <div class="cta-buttons">
+        <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Registrer deg</a>
+        <a href="{{ url_for('auth.login') }}" class="btn btn-secondary">Logg inn</a>
+    </div>
+    {% endif %}
+</section>
+
+<section class="features">
+    <div class="feature-card">
+        <h3>🔒 Sikker</h3>
+        <p>Din data er beskyttet med moderne sikkerhetsstandarder</p>
+    </div>
+    <div class="feature-card">
+        <h3>⚡ Rask</h3>
+        <p>Lynrask ytelse og responsivt brukergrensesnitt</p>
+    </div>
+    <div class="feature-card">
+        <h3>📱 Responsiv</h3>
+        <p>Fungerer perfekt på alle enheter - desktop, tablet og mobil</p>
+    </div>
+</section>
+{% endblock %}
